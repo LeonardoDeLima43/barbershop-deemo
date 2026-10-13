@@ -3,14 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Miniver&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
     <title>Barbershop-website</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-logo">
+        <h1><a href="#">BarberShop</a></h1>
+      </div>
+      
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
+      </nav>
+
+      <button class="header-btn">Contact us</button>
+    </header>
+
+    <main class="container">
+
+      <!-- hero-section -->
+       <section class="hero-section">
+        
+        <!-- Formular Appointment -->
+        <div class="wrapper-formular">
+
+          <form>
+            <h2>Make an Appointment</h2>
+            <input type="text" placeholder="John Lennon">
+            <input type="email" placeholder="Email">
+            <input type="tel" placeholder="Phone">
+
+            <div class="wrapper-date">
+            <input type="datetime-local" placeholder="2024-05-24 10:00PM">
+            <button class="submit-btn">Submit request</button>
+
+          </div>
+          </form>
+
+          <p>Every cut tells a story. We combine time-honored barbering techniques with today's trends to give you a look that fits your style. Sit back, relax, and let our experienced barbers take care of the rest.</p>
+        </div>
+
+        <!-- Rechter Wrapper -->
+        <div class="wrapper-rechts">
+          <h1>Where transtions meest modern style</h1>
+        </div>
+
+       </section>
+    </main>
+  </body>
 </html>

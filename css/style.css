@@ -1,0 +1,142 @@
+:root {
+  /* Farben – Hintergründe */
+  --color-bg:            #EAE0CB;  /* heller Haupt-Hintergrund */
+  --color-bg-dark:       #1A1A1A;  /* dunkle Sections */
+  --color-bg-muted:      #49403C;  /* z.B. Location-Section */
+  --color-surface:       #F3F3F3;  /* Karten auf hellem BG */
+  --color-surface-dark:  #1E1E1E;  /* Karten auf dunklem BG */
+
+  /* Farben – Text */
+  --color-text:          #111111;
+  --color-text-light:    #FFFFFF;  /* Text auf dunklem BG */
+  --color-text-muted:    #B0B1AE;  /* Fließtext grau */
+
+  /* Farben – Akzent */
+  --color-accent:        #FCA95C;  /* Buttons, Highlights */
+  --color-accent-hover:  #F39441;
+  --color-secondary:     #89766A;  /* Taupe */
+
+  /* Linien */
+  --color-border:        rgba(0, 0, 0, 0.12);
+  --color-border-dark:   rgba(255, 255, 255, 0.1);
+
+  /* Fonts */
+  --font-heading: "Bebas Neue", "Oswald", sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-body);
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  font-family: var(--font-heading);
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.header {
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header h1 a{
+  color: var(--color-text-light);
+}
+
+.navbar {
+  border: 2px solid var(--color-border-dark);
+  border-radius: 8px;
+  padding: 15px 10px;
+}
+
+.navbar ul {
+ display: flex;
+ gap: 25px;
+}
+
+.navbar li a{
+  color: var(--color-text-light);
+}
+
+.header-btn {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: var(--color-text-light);
+  color: var(--color-text);
+}
+
+.hero-section {
+  background-image: url(/assets/images/images/barber-wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-formular {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form {
+  border: 2px solid var(--color-border-dark);
+}

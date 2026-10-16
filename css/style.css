@@ -23,6 +23,7 @@
   /* Fonts */
   --font-heading: "Bebas Neue", "Oswald", sans-serif;
   --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-paragraph: "Bricolage Grotesque", sans-serif;
 }
 
 * {
@@ -62,12 +63,12 @@ input, button, textarea, select {
 /* 8. Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
-  font-family: var(--font-heading);
 }
 
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
+  font-family: var(--font-paragraph);
 }
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
@@ -80,6 +81,13 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;      /* zentriert */
+  padding: 0 40px;     /* Abstand zum Rand auf kleinen Bildschirmen */
+}
+
 
 .header {
   display: flex;
@@ -94,6 +102,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .header h1 a{
   color: var(--color-text-light);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
 }
 
 .navbar {
@@ -112,6 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar li a{
   display: inline-block;
+  font-size: 0.875rem;
   color: var(--color-text-light);
   transition: background-color 0.2s ease, color 0.2s ease;
   padding: 8px 16px;
@@ -125,10 +138,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-btn {
   border: none;
+  font-size: 0.875rem;
   padding: 10px 15px;
   border-radius: 8px;
   background: var(--color-text-light);
   color: var(--color-text);
+  cursor: pointer;
 }
 
 .hero-section {
@@ -163,18 +178,20 @@ form {
   flex-direction: column;
   gap: 8px;
   border: 2px solid rgba(255, 255, 255, 0.25);
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 25px 20px;
 }
 
 form h2{
   color: var(--color-text-light);
-  font-weight: 100;
+  font-size: 1.5rem;
+  font-weight: 300;
   padding-bottom: 10px;
 }
 
 input {
   padding: 10px;
+  font-size: 0.875rem;
   border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 0.25);
   background: transparent;
@@ -210,6 +227,7 @@ input:focus {
 
 .submit-btn {
   border: none;
+  font-size: 0.875rem;
   padding: 10px 12px;
   border-radius: 8px;
   background: var(--color-accent);
@@ -219,6 +237,7 @@ input:focus {
 
 .wrapper-formular p {
   color: var(--color-text-muted);
+  font-size: 0.875rem;
 }
 
 .wrapper-rechts {
@@ -227,8 +246,182 @@ input:focus {
 
 .wrapper-rechts h1 {
   color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-weight: 400;
   font-size: 4rem;
   text-align: right;
   text-transform: uppercase;
   line-height: 1;
+}
+
+.about-section {
+  background: var(--color-bg);
+  padding: 100px 60px;
+}
+
+.about-top {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.about-text {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 3rem;          
+  line-height: 0.95;        
+  letter-spacing: 0.5px;    
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+
+.about-text p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 60ch;
+  color: var(--color-te);
+}
+
+.about-heading {          
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.slider-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slider-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.slider-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.slider-btn:hover {
+  opacity: 0.6;
+}
+
+
+.slider {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+}
+
+.slider-track {
+ display: flex;
+ gap: 20px;
+}
+
+.slider-track img {
+  width: 280px;
+  height: 320px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.about-bottom {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-card {
+  height: 280px;
+  width: 379px;
+  background: var(--color-accent);
+  border-radius: 16px;
+  text-align: center;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;  
+  gap: 6px;
+}
+
+.dot {
+  width: 22px;
+  height: 2px;                       
+  background: rgba(0, 0, 0, 0.25);  
+  border-radius: 2px;
+  transition: width 0.3s, background 0.3s;
+}
+
+.dot.active {
+  width: 32px;                      
+  background: var(--color-text);    
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-footer span {
+   font-style: italic;
+}
+
+
+.review-btn {
+  background: var(--color-accent);
+  border: 1px solid black;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.review-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.prices {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  max-width: 500px;
+  gap: 20px;
+}
+
+
+.prices span {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.prices li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding: 15px 0;
 }

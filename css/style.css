@@ -1,28 +1,28 @@
 :root {
   /* Farben – Hintergründe */
-  --color-bg:            #EAE0CB;  /* heller Haupt-Hintergrund */
-  --color-bg-dark:       #1A1A1A;  /* dunkle Sections */
-  --color-bg-muted:      #49403C;  /* z.B. Location-Section */
-  --color-surface:       #F3F3F3;  /* Karten auf hellem BG */
-  --color-surface-dark:  #1E1E1E;  /* Karten auf dunklem BG */
+  --color-bg: #eae0cb; /* heller Haupt-Hintergrund */
+  --color-bg-dark: #1a1a1a; /* dunkle Sections */
+  --color-bg-muted: #49403c; /* z.B. Location-Section */
+  --color-surface: #f3f3f3; /* Karten auf hellem BG */
+  --color-surface-dark: #1e1e1e; /* Karten auf dunklem BG */
 
   /* Farben – Text */
-  --color-text:          #111111;
-  --color-text-light:    #FFFFFF;  /* Text auf dunklem BG */
-  --color-text-muted:    #B0B1AE;  /* Fließtext grau */
+  --color-text: #111111;
+  --color-text-light: #ffffff; /* Text auf dunklem BG */
+  --color-text-muted: #b0b1ae; /* Fließtext grau */
 
   /* Farben – Akzent */
-  --color-accent:        #FCA95C;  /* Buttons, Highlights */
-  --color-accent-hover:  #F39441;
-  --color-secondary:     #89766A;  /* Taupe */
+  --color-accent: #fca95c; /* Buttons, Highlights */
+  --color-accent-hover: #f39441;
+  --color-secondary: #89766a; /* Taupe */
 
   /* Linien */
-  --color-border:        rgba(0, 0, 0, 0.12);
-  --color-border-dark:   rgba(255, 255, 255, 0.1);
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-border-dark: rgba(255, 255, 255, 0.1);
 
   /* Fonts */
   --font-heading: "Bebas Neue", "Oswald", sans-serif;
-  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-paragraph: "Bricolage Grotesque", sans-serif;
 }
 
@@ -50,18 +50,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -70,7 +83,12 @@ p {
   text-wrap: pretty;
   font-family: var(--font-paragraph);
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
   font-family: var(--font-heading);
 }
@@ -78,16 +96,16 @@ h1, h2, h3, h4, h5, h6 {
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;      /* zentriert */
-  padding: 0 40px;     /* Abstand zum Rand auf kleinen Bildschirmen */
+  margin: 0 auto;
+  padding: 0 40px;
 }
-
 
 .header {
   display: flex;
@@ -100,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
 }
 
-.header h1 a{
+.header h1 a {
   color: var(--color-text-light);
   font-family: var(--font-heading);
   font-weight: 400;
@@ -118,15 +136,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar ul {
- display: flex;
- gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.navbar li a{
+.navbar li a {
   display: inline-block;
   font-size: 0.875rem;
   color: var(--color-text-light);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
   padding: 8px 16px;
   border-radius: 8px;
 }
@@ -144,6 +164,11 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-text-light);
   color: var(--color-text);
   cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.header-btn:hover {
+  background: var(--color-accent);
 }
 
 .hero-section {
@@ -170,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch
+  align-items: stretch;
 }
 
 form {
@@ -182,7 +207,7 @@ form {
   padding: 25px 20px;
 }
 
-form h2{
+form h2 {
   color: var(--color-text-light);
   font-size: 1.5rem;
   font-weight: 300;
@@ -195,8 +220,8 @@ input {
   border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 0.25);
   background: transparent;
-  color: var(--color-text-light);color-scheme: dark;
-
+  color: var(--color-text-light);
+  color-scheme: dark;
 }
 
 input:focus {
@@ -233,6 +258,12 @@ input:focus {
   background: var(--color-accent);
   color: var(--color-text);
   white-space: nowrap;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.submit-btn:hover {
+  background: var(--color-text-light);
 }
 
 .wrapper-formular p {
@@ -276,13 +307,12 @@ input:focus {
 .section-title {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 3rem;          
-  line-height: 0.95;        
-  letter-spacing: 0.5px;    
+  font-size: 3rem;
+  line-height: 0.95;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-text);
 }
-
 
 .about-text p {
   font-size: 0.85rem;
@@ -291,7 +321,7 @@ input:focus {
   color: var(--color-te);
 }
 
-.about-heading {          
+.about-heading {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -321,7 +351,6 @@ input:focus {
   opacity: 0.6;
 }
 
-
 .slider {
   overflow: hidden;
   flex: 1;
@@ -329,8 +358,8 @@ input:focus {
 }
 
 .slider-track {
- display: flex;
- gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .slider-track img {
@@ -361,21 +390,23 @@ input:focus {
 
 .dots {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   gap: 6px;
 }
 
 .dot {
   width: 22px;
-  height: 2px;                       
-  background: rgba(0, 0, 0, 0.25);  
+  height: 2px;
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 2px;
-  transition: width 0.3s, background 0.3s;
+  transition:
+    width 0.3s,
+    background 0.3s;
 }
 
 .dot.active {
-  width: 32px;                      
-  background: var(--color-text);    
+  width: 32px;
+  background: var(--color-text);
 }
 
 .review-footer {
@@ -385,9 +416,8 @@ input:focus {
 }
 
 .review-footer span {
-   font-style: italic;
+  font-style: italic;
 }
-
 
 .review-btn {
   background: var(--color-accent);
@@ -413,7 +443,6 @@ input:focus {
   gap: 20px;
 }
 
-
 .prices span {
   font-size: 20px;
   text-transform: uppercase;
@@ -424,4 +453,93 @@ input:focus {
   justify-content: space-between;
   border-bottom: 1px solid var(--color-border);
   padding: 15px 0;
+}
+
+.location-section {
+  background: var(--color-bg-muted);
+  color: var(--color-text-light);
+  padding: 100px 40px;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.location-text {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.location-text h2 {
+  color: var(--color-text-light);
+}
+
+.location-text p {
+  max-width: 50ch;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.image-container img {
+  width: 300px;
+  height: 400px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: grayscale(1) invert(0.9);
+}
+
+.contact {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+
+.contact h3 {
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+
+.contact-info p {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.contact-item {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.contact-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 40px;
+}
+
+.contact-item:last-child{
+  border: none;
+  padding-bottom: 0;
+}
+
+.contact-icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-text-light);
+  border-radius: 12px;
+}
+
+.contact-icon svg {
+  color: var(--color-text);
 }

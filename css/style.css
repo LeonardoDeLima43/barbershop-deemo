@@ -318,7 +318,7 @@ input:focus {
   font-size: 0.85rem;
   line-height: 1.6;
   max-width: 60ch;
-  color: var(--color-te);
+  color: var(--color-text);
 }
 
 .about-heading {
@@ -546,6 +546,7 @@ input:focus {
 .experts-section {
   background: var(--color-surface);
   padding: 100px 40px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .experts-header {
@@ -554,7 +555,6 @@ input:focus {
   align-items: center;
   text-align: center;
   gap: 30px;
-
 }
 
 .experts-header p {
@@ -579,10 +579,9 @@ input:focus {
   border-radius: 16px;
   display: block;
   width: 100%;
-  aspect-ratio: auto;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.52);
 }
 
 .expert-name {
@@ -605,7 +604,6 @@ input:focus {
 
 .expert-socials {
   position: absolute;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -615,4 +613,59 @@ input:focus {
 
 .expert-socials a {
   color: gray;
+}
+
+.footer {
+  background: var(--color-surface);
+  padding: 100px 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  align-items: start;
+  gap: 40px;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-text);
+  padding-bottom: 15px;
+}
+
+.footer-contact address {
+  font-style: normal;
+  display: grid;
+  gap: 5px;
+}
+
+.footer-contact address p,
+.footer-contact address a {
+  color: var(--color-text-muted);
+}
+
+.footer-navbar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-navbar h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-navbar ul {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-navbar a {
+  color: var(--color-text-muted);
+}
+
+.footer a:hover {
+  color: var(--color-text);
 }

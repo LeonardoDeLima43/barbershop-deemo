@@ -501,7 +501,6 @@ input:focus {
   justify-content: center;
   flex-direction: column;
   gap: 40px;
-  
 }
 
 .contact h3 {
@@ -525,7 +524,7 @@ input:focus {
   padding-bottom: 40px;
 }
 
-.contact-item:last-child{
+.contact-item:last-child {
   border: none;
   padding-bottom: 0;
 }
@@ -542,4 +541,78 @@ input:focus {
 
 .contact-icon svg {
   color: var(--color-text);
+}
+
+.experts-section {
+  background: var(--color-surface);
+  padding: 100px 40px;
+}
+
+.experts-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+
+}
+
+.experts-header p {
+  font-weight: 500;
+  font-size: 14px;
+  max-width: 70ch;
+  color: var(--color-text);
+}
+
+.experts-grid {
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 20px;
+}
+
+.expert-card {
+  position: relative;
+}
+
+.expert-card img {
+  border-radius: 16px;
+  display: block;
+  width: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.52);
+}
+
+.expert-name {
+  position: absolute;
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  border-radius: 8px;
+  padding: 10px 15px;
+  top: 15px;
+  left: 15px;
+}
+
+.expert-name h3 {
+  font-family: var(--font-body);
+}
+
+.expert-name span {
+  color: var(--color-text-muted);
+}
+
+.expert-socials {
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  top: 15px;
+  right: 15px;
+}
+
+.expert-socials a {
+  color: gray;
 }

@@ -14,3 +14,9 @@ window.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
+
+const scrollUpButton = document.getElementsByClassName("scrollUp")[0];
+
+scrollUpButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

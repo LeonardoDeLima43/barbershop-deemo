@@ -120,6 +120,11 @@ h6 {
   z-index: 100;
   background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(12px);
+  transition: background 0.3s;
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* Sprungziele nicht unter dem fixed Header verstecken */
@@ -676,4 +681,34 @@ input:focus {
 
 .footer a:hover {
   color: var(--color-text);
+}
+
+/* Scroll-Up-Button rechts neben dem Footer-Grid */
+.footer-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-inner .footer-container {
+  flex: 1;
+}
+
+.scrollUp {
+  background: var(--color-accent);
+  color: var(--color-text);
+  border: 1px solid black;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+
+.scrollUp:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-4px);
 }

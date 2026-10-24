@@ -1,32 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="description"
+      content="BarberShop in der Bremer Altstadt – klassische Haarschnitte, Fades und Bartpflege. Jetzt Termin vereinbaren."
+    />
+    <meta name="theme-color" content="#1a1a1a" />
+    <title>BarberShop Bremen – Tradition trifft modernen Stil</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Fonts: nur die Schriften, die in style.css wirklich benutzt werden -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Miniver&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:opsz,wght@14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Icons (Pfeile im Review-Slider und Scroll-Up-Button) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <title>Barbershop-website</title>
-    <script src="/js/script.js" defer></script>
+
+    <!-- Relative Pfade (ohne "/" am Anfang), damit die Seite auch auf GitHub Pages im Unterordner funktioniert -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
   </head>
   <body>
-    <!-- Header -->
+    <!-- ===== Header (fixed, bekommt beim Scrollen die Klasse .scrolled) ===== -->
     <header class="header">
-      <div class="header-logo">
-        <h1><a href="#">BarberShop</a></h1>
-      </div>
+      <a class="header-logo" href="#home">BarberShop</a>
 
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Hauptmenü">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">Über uns</a></li>
@@ -36,23 +43,48 @@
         </ul>
       </nav>
 
+      <!-- scrollt per JS zum Footer -->
       <button id="header-btn" class="header-btn">Kontaktier uns</button>
     </header>
 
     <main>
-      <!-- Hero-section -->
+      <!-- ===== Hero: Terminformular links, Headline rechts ===== -->
       <section class="hero-section" id="home">
-        <!-- Formular Appointment -->
         <div class="wrapper-formular">
           <form>
-            <h2>Termin Vereinbaren</h2>
-            <input type="text" placeholder="John Lennon" />
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Telefon" />
+            <h2>Termin vereinbaren</h2>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              aria-label="Name"
+              autocomplete="name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="E-Mail"
+              aria-label="E-Mail"
+              autocomplete="email"
+              required
+            />
+            <input
+              type="tel"
+              name="telefon"
+              placeholder="Telefon"
+              aria-label="Telefon"
+              autocomplete="tel"
+            />
 
             <div class="wrapper-date">
-              <input type="datetime-local" required />
-              <button class="submit-btn">Absenden</button>
+              <input
+                type="datetime-local"
+                name="termin"
+                aria-label="Wunschtermin"
+                required
+              />
+              <button type="submit" class="submit-btn">Absenden</button>
             </div>
           </form>
 
@@ -65,7 +97,6 @@
           </p>
         </div>
 
-        <!-- Rechter Wrapper -->
         <div class="wrapper-rechts">
           <h1>
             Wo Tradition <br />
@@ -74,14 +105,14 @@
         </div>
       </section>
 
-      <!-- About-section -->
+      <!-- ===== About: Bild-Slider oben, Review-Card + Preise unten ===== -->
       <section class="about-section" id="about">
         <div class="container">
           <div class="about-top">
             <div class="about-text">
               <div class="about-heading">
                 <h2 class="section-title">
-                  Endecke <br />
+                  Entdecke <br />
                   unsere Arbeit
                 </h2>
 
@@ -93,6 +124,7 @@
                 </p>
               </div>
 
+              <!-- Zähler + Pfeile steuern den Slider (siehe script.js) -->
               <div class="slider-controls">
                 <span>(1/7)</span>
 
@@ -132,38 +164,44 @@
             <div class="slider">
               <div class="slider-track">
                 <img
-                  src="./assets/images/images/barber-work1.jpg"
-                  alt="friseur die konturen mit eine rasiere klinge schneiden"
+                  src="assets/images/barber-work1.webp"
+                  alt="Friseur schneidet die Konturen mit einer Rasierklinge"
                 />
                 <img
-                  src="./assets/images/images/barber-work2.jpg"
-                  alt="friseur am haares schneiden schneiden"
+                  src="assets/images/barber-work2.webp"
+                  alt="Friseur beim Haareschneiden"
                 />
                 <img
-                  src="./assets/images/images/barber-work3.jpg"
-                  alt="Highfade von einem kunden"
+                  loading="lazy"
+                  src="assets/images/barber-work3.webp"
+                  alt="High Fade eines Kunden"
                 />
                 <img
-                  src="./assets/images/images/barber-work4.jpg"
-                  alt="Midfade von einem kunden"
+                  loading="lazy"
+                  src="assets/images/barber-work4.webp"
+                  alt="Mid Fade eines Kunden"
                 />
                 <img
-                  src="./assets/images/images/barber-work5.jpg"
-                  alt="Wavy hsir lowfades eines kunden"
+                  loading="lazy"
+                  src="assets/images/barber-work5.webp"
+                  alt="Welliges Haar mit Low Fade"
                 />
                 <img
-                  src="./assets/images/images/barber-work6.jpg"
-                  alt="Lowfades eines kunden"
+                  loading="lazy"
+                  src="assets/images/barber-work6.webp"
+                  alt="Low Fade eines Kunden"
                 />
                 <img
-                  src="./assets/images/images/barber-work7.jpg"
-                  alt="Weiterer midfade eines kunden"
+                  loading="lazy"
+                  src="assets/images/barber-work7.webp"
+                  alt="Weiterer Mid Fade eines Kunden"
                 />
               </div>
             </div>
           </div>
 
           <div class="about-bottom">
+            <!-- Review-Card: Text, Name und aktiver Dot werden per JS gewechselt -->
             <div class="review-card">
               <p>
                 „Ich komme seit über fünf Jahren hierher und wurde noch nie
@@ -223,6 +261,7 @@
         </div>
       </section>
 
+      <!-- ===== Standort: Text, Karte (Link zu Google Maps), Kontaktdaten ===== -->
       <section class="location-section" id="standort">
         <div class="location container">
           <div class="location-text">
@@ -239,14 +278,19 @@
             </p>
 
             <div class="btn-container">
-              <button class="submit-btn">Anfrage Absenden</button>
+              <button class="submit-btn">Anfrage absenden</button>
             </div>
           </div>
 
           <div class="image-container">
-            <a href="DEIN-GOOGLE-MAPS-LINK" target="_blank" rel="noopener">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Altstadt+Bremen+28195"
+              target="_blank"
+              rel="noopener"
+            >
               <img
-                src="/assets/images/images/location.png"
+                loading="lazy"
+                src="assets/images/location.webp"
                 alt="Unser Standort auf der Karte"
               />
             </a>
@@ -256,6 +300,7 @@
             <div class="contact-item">
               <div class="contact-icon">
                 <svg
+                  aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="30"
@@ -282,6 +327,7 @@
             <div class="contact-item">
               <div class="contact-icon">
                 <svg
+                  aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="30"
@@ -299,11 +345,11 @@
               </div>
 
               <div class="contact-info">
-                <h3>+4912345678</h3>
+                <h3><a href="tel:+491234567">+49 123-4567</a></h3>
 
                 <p>
-                  Montag-Freitag: 10:00 Uhr - 20:00 uhr <br />
-                  Samtag: 10:00 Uhr - 18:00 Uhr
+                  Montag–Freitag: 10:00–20:00 Uhr <br />
+                  Samstag: 10:00–18:00 Uhr
                 </p>
               </div>
             </div>
@@ -311,6 +357,7 @@
         </div>
       </section>
 
+      <!-- ===== Experten: Team-Karten im Grid ===== -->
       <section class="experts-section" id="experten">
         <div class="container">
           <div class="experts-header">
@@ -372,7 +419,7 @@
 
               <img
                 loading="lazy"
-                src="./assets/images/images/john-smith.jpg"
+                src="assets/images/john-smith.webp"
                 alt="John Smith, Master Barber"
               />
             </article>
@@ -426,7 +473,7 @@
 
               <img
                 loading="lazy"
-                src="./assets/images/images/eric-johnson.jpg"
+                src="assets/images/eric-johnson.webp"
                 alt="Eric Johnson, Senior Stylist"
               />
             </article>
@@ -480,7 +527,7 @@
 
               <img
                 loading="lazy"
-                src="./assets/images/images/mike-davis.jpg"
+                src="assets/images/mike-davis.webp"
                 alt="Mike Davis, Barber"
               />
             </article>
@@ -489,6 +536,7 @@
       </section>
     </main>
 
+    <!-- ===== Footer: Kontakt, Menüs, Scroll-Up-Button ===== -->
     <footer class="footer" id="kontakt">
       <div class="container footer-inner">
         <div class="footer-container">
@@ -506,8 +554,8 @@
           </div>
 
           <div class="footer-navbar">
-            <nav aria-label="Footer Menü">
-              <h3>Menu</h3>
+            <nav aria-label="Footer-Menü">
+              <h3>Menü</h3>
               <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Über uns</a></li>
@@ -536,6 +584,12 @@
           </button>
         </div>
       </div>
+
+      <!-- Hinweis fürs Portfolio: fiktiver Shop, keine echten Daten -->
+      <p class="footer-note container">
+        © 2026 BarberShop · Demo-Projekt von Leonardo De Lima – kein echtes
+        Geschäft.
+      </p>
     </footer>
   </body>
 </html>

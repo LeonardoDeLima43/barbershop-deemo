@@ -1,3 +1,6 @@
+/* =========================================================
+   Variablen
+   ========================================================= */
 :root {
   /* Farben – Hintergründe */
   --color-bg: #eae0cb; /* heller Haupt-Hintergrund */
@@ -20,12 +23,15 @@
   --color-border: rgba(0, 0, 0, 0.12);
   --color-border-dark: rgba(255, 255, 255, 0.1);
 
-  /* Fonts */
+  /* Fonts (werden im <head> von Google Fonts geladen) */
   --font-heading: "Bebas Neue", "Oswald", sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-paragraph: "Bricolage Grotesque", sans-serif;
 }
 
+/* =========================================================
+   Reset & Basis
+   ========================================================= */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -34,7 +40,7 @@
   list-style: none;
 }
 
-/* 3. Enable keyword animations */
+/* Smooth Scroll nur, wenn der Nutzer keine reduzierten Animationen will */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -43,14 +49,11 @@
 }
 
 body {
-  /* 4. Increase line-height */
   line-height: 1.5;
-  /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-body);
 }
 
-/* 6. Improve media defaults */
 img,
 picture,
 video,
@@ -60,7 +63,7 @@ svg {
   max-width: 100%;
 }
 
-/* 7. Inherit fonts for form controls */
+/* Formular-Elemente erben sonst nicht die Schrift */
 input,
 button,
 textarea,
@@ -68,7 +71,6 @@ select {
   font: inherit;
 }
 
-/* 8. Avoid text overflows */
 p,
 h1,
 h2,
@@ -79,11 +81,11 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
   font-family: var(--font-paragraph);
 }
+
 h1,
 h2,
 h3,
@@ -94,20 +96,23 @@ h6 {
   font-family: var(--font-heading);
 }
 
-/*
-  10. Create a root stacking context
-*/
-#root,
-#__next {
-  isolation: isolate;
+/* Sprungziele nicht unter dem fixed Header verstecken */
+[id] {
+  scroll-margin-top: 90px;
 }
 
+/* =========================================================
+   Wiederverwendbare Klassen
+   ========================================================= */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
+/* =========================================================
+   Header
+   ========================================================= */
 .header {
   display: flex;
   justify-content: space-between;
@@ -123,16 +128,12 @@ h6 {
   transition: background 0.3s;
 }
 
+/* wird per JS gesetzt, sobald man runterscrollt */
 .header.scrolled {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Sprungziele nicht unter dem fixed Header verstecken */
-[id] {
-  scroll-margin-top: 90px;
-}
-
-.header h1 a {
+.header-logo {
   color: var(--color-text-light);
   font-family: var(--font-heading);
   font-weight: 400;
@@ -184,6 +185,9 @@ h6 {
   background: var(--color-accent);
 }
 
+/* =========================================================
+   Hero
+   ========================================================= */
 .hero-section {
   /* dunkler Verlauf übers Bild, oben stärker, damit die Navbar lesbar bleibt */
   background-image:
@@ -193,7 +197,7 @@ h6 {
       rgba(0, 0, 0, 0.35) 35%,
       rgba(0, 0, 0, 0.55) 100%
     ),
-    url(/assets/images/images/barber-wallpaper.jpg);
+    url(../assets/images/barber-wallpaper.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -234,7 +238,7 @@ input {
   border: 2px solid rgba(255, 255, 255, 0.25);
   background: transparent;
   color: var(--color-text-light);
-  color-scheme: dark;
+  color-scheme: dark; /* macht das Kalender-Icon im Datumsfeld hell */
 }
 
 input:focus {
@@ -256,9 +260,10 @@ input:focus {
 
 .wrapper-date input {
   flex: 1;
-  min-width: 0;
+  min-width: 0; /* sonst sprengt das Datumsfeld die Breite */
 }
 
+/* leeres Datumsfeld grau wie ein Placeholder */
 .wrapper-date input:invalid {
   color: var(--color-text-muted);
 }
@@ -298,6 +303,9 @@ input:focus {
   line-height: 1;
 }
 
+/* =========================================================
+   About – Slider
+   ========================================================= */
 .about-section {
   background: var(--color-bg);
   padding: 100px 60px;
@@ -364,18 +372,21 @@ input:focus {
   opacity: 0.6;
 }
 
+/* Fenster, durch das man den Track sieht */
 .slider {
   overflow: hidden;
   flex: 1;
   min-width: 0;
 }
 
+/* wird per JS mit translateX verschoben */
 .slider-track {
   display: flex;
   gap: 20px;
   transition: transform 0.4s ease;
 }
 
+/* Bildbreite + gap = Schrittweite im JS (280 + 20 = 300px) */
 .slider-track img {
   width: 280px;
   height: 320px;
@@ -384,6 +395,9 @@ input:focus {
   border-radius: 16px;
 }
 
+/* =========================================================
+   About – Review-Card & Preise
+   ========================================================= */
 .about-bottom {
   padding-top: 100px;
   display: flex;
@@ -469,6 +483,9 @@ input:focus {
   padding: 15px 0;
 }
 
+/* =========================================================
+   Standort
+   ========================================================= */
 .location-section {
   background: var(--color-bg-muted);
   color: var(--color-text-light);
@@ -499,6 +516,7 @@ input:focus {
   font-size: 14px;
 }
 
+/* Karte in Graustufen + invertiert, passend zum dunklen Hintergrund */
 .image-container img {
   width: 300px;
   height: 400px;
@@ -522,6 +540,10 @@ input:focus {
   font-weight: 100;
 }
 
+.contact h3 a {
+  color: inherit;
+}
+
 .contact-info p {
   font-size: 12px;
   color: var(--color-text-muted);
@@ -531,9 +553,6 @@ input:focus {
   display: flex;
   gap: 30px;
   align-items: center;
-}
-
-.contact-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   padding-bottom: 40px;
 }
@@ -557,6 +576,9 @@ input:focus {
   color: var(--color-text);
 }
 
+/* =========================================================
+   Experten
+   ========================================================= */
 .experts-section {
   background: var(--color-surface);
   padding: 100px 40px;
@@ -578,6 +600,7 @@ input:focus {
   color: var(--color-text);
 }
 
+/* passt die Spaltenanzahl automatisch an die Breite an */
 .experts-grid {
   padding-top: 30px;
   display: grid;
@@ -585,6 +608,7 @@ input:focus {
   gap: 20px;
 }
 
+/* Bezugspunkt für Name-Badge und Social-Icons */
 .expert-card {
   position: relative;
 }
@@ -629,9 +653,12 @@ input:focus {
   color: gray;
 }
 
+/* =========================================================
+   Footer
+   ========================================================= */
 .footer {
   background: var(--color-surface);
-  padding: 100px 40px;
+  padding: 100px 40px 40px;
 }
 
 .footer-container {
@@ -713,3 +740,15 @@ input:focus {
   background: var(--color-accent-hover);
   transform: translateY(-4px);
 }
+
+.footer-note {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* =========================================================
+   Responsive – kommt noch (Tablet & Handy)
+   ========================================================= */

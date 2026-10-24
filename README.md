@@ -2,7 +2,7 @@
 
 Eine Landingpage für einen fiktiven Barbershop in der Bremer Altstadt. Das ist ein Lernprojekt, bei dem ich ein Design ohne Framework mit HTML, CSS und Vanilla JavaScript umgesetzt habe.
 
-**Live-Demo:** _(Link zu GitHub Pages hier eintragen)_
+**Live-Demo:** _(https://leonardodelima43.github.io/barbershop-deemo/)_
 
 ## Sections
 

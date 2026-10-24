@@ -185,6 +185,15 @@ h6 {
   background: var(--color-accent);
 }
 
+.burger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 28px;
+  cursor: pointer;
+}
+
 /* =========================================================
    Hero
    ========================================================= */
@@ -749,6 +758,237 @@ input:focus {
   color: var(--color-text-muted);
 }
 
+
 /* =========================================================
-   Responsive – kommt noch (Tablet & Handy)
+   Responsive – Tablet (bis 768px)
+   Die Sections haben hier kein eigenes Seiten-Padding mehr,
+   den Abstand zum Rand übernimmt .container
    ========================================================= */
+@media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  /* Header: Navbar und Button weg, stattdessen Burger */
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header-btn {
+    display: none;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  /* aufgeklapptes Menü – die Klasse .open kommt per JS vom Burger-Button */
+  .navbar.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .navbar.open ul {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .navbar.open li a {
+    display: block;
+    font-size: 1rem;
+  }
+
+  .burger-btn {
+    display: block;
+  }
+
+  /* Hero: Formular und Headline untereinander */
+  .hero-section {
+    padding: 120px 20px 60px 20px; /* 20px wie Logo und .container */
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    min-height: auto;
+  }
+
+  /* Formular über die volle Breite statt nur 400px */
+  .wrapper-formular {
+    max-width: none;
+    gap: 15px;
+    padding-bottom: 20px;
+  }
+
+  .wrapper-formular p {
+    max-width: 60ch; /* lange Zeilen lesen sich schlecht */
+  }
+
+  .wrapper-date {
+    padding-bottom: 0;
+  }
+
+  .wrapper-rechts {
+    align-self: flex-start;
+  }
+
+  .wrapper-rechts h1 {
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  /* About: Text über dem Slider, Card und Preise nebeneinander */
+  .about-section {
+    padding: 50px 0 30px 0;
+  }
+
+  .about-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-text {
+    flex: none; /* sonst wird der Block in der Spalte 320px hoch */
+  }
+
+  .about-bottom {
+    padding: 40px 0;
+    gap: 30px;
+  }
+
+  /* Card und Preise teilen sich die Breite je zur Hälfte */
+  .review-card {
+    flex: 1;
+    width: auto;
+    height: auto; /* Höhe richtet sich nach dem Text */
+    min-height: 330px; /* damit die Card beim Wechseln nicht springt */
+    padding: 30px 25px;
+    gap: 20px;
+  }
+
+  .prices {
+    flex: 1;
+    max-width: none;
+    justify-content: flex-start;
+  }
+
+  /* Standort: alles untereinander und links bündig */
+  .location-section {
+    padding: 60px 0;
+  }
+
+  .location {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+
+  .location-text {
+    max-width: none;
+    gap: 30px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .contact {
+    width: 100%;
+    height: auto;
+    gap: 30px;
+  }
+
+  .contact-item {
+    padding-bottom: 30px;
+  }
+
+  /* Experten: das Grid bricht von selbst um */
+  .experts-section {
+    padding: 60px 0;
+  }
+
+  /* Footer: Scroll-Up-Button unter das Grid */
+  .footer {
+    padding: 60px 0 30px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .scrollUp-container {
+    align-self: flex-end;
+  }
+
+  .footer-note {
+    margin-top: 40px;
+  }
+}
+
+/* =========================================================
+   Responsive – Handy (bis 480px)
+   gilt zusätzlich zu den Tablet-Regeln oben
+   ========================================================= */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-section {
+    padding: 110px 20px 50px 20px;
+  }
+
+  .wrapper-formular {
+    max-width: none;
+  }
+
+  .wrapper-rechts h1 {
+    font-size: 2rem;
+  }
+
+  /* auf dem Handy ist zu wenig Platz nebeneinander */
+  .about-bottom {
+    flex-direction: column;
+  }
+
+  .review-card {
+    flex: none;
+    padding: 25px;
+    min-height: 300px; /* schmaler = mehr Zeilen, daher etwas höher */
+  }
+
+  .prices span {
+    font-size: 16px;
+  }
+
+  .image-container img {
+    height: 250px;
+  }
+
+  .contact h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-item {
+    gap: 20px;
+  }
+
+  .contact-icon {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+}

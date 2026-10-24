@@ -6,6 +6,36 @@ headerButton.addEventListener("click", () => {
   footerStandort.scrollIntoView({ behavior: "smooth", block: "end" });
 });
 
+// ===== Burger-Menü (nur auf Tablet/Handy sichtbar) =====
+const burgerButton = document.getElementsByClassName("burger-btn")[0];
+const navbar = document.getElementsByClassName("navbar")[0];
+const burgerIcon = burgerButton.querySelector("i");
+const navLinks = navbar.querySelectorAll("a");
+
+function toggleMenu() {
+  // toggle gibt zurück, ob die Klasse jetzt gesetzt ist
+  const isOpen = navbar.classList.toggle("open");
+
+  // Icon wechselt zwischen ☰ und ✕
+  burgerIcon.classList.toggle("fa-bars", !isOpen);
+  burgerIcon.classList.toggle("fa-xmark", isOpen);
+
+  // für Screenreader
+  burgerButton.setAttribute("aria-expanded", isOpen);
+  burgerButton.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
+}
+
+burgerButton.addEventListener("click", toggleMenu);
+
+// nach dem Klick auf einen Link das Menü wieder schließen
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navbar.classList.contains("open")) {
+      toggleMenu();
+    }
+  });
+});
+
 // ===== Header bekommt ab 50px Scroll einen dunklen Hintergrund =====
 const header = document.getElementsByClassName("header")[0];
 
